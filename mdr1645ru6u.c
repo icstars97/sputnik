@@ -83,7 +83,7 @@ uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_ad
 			{	
 				fail_arr[k]=(fail_arr[k]<<4) | i;
 		
-				offset=pattern[i] xor ram_data[i];
+				offset=pattern[i] ^ ram_data[i];
 				
 				while(offset)
 				{	

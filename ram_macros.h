@@ -1,18 +1,181 @@
-//RAM -- port A pins define
+//Ram control pins
+#define NCE ((uint32_t) 1<<6)
+#define NOE ((uint32_t) 1<<5)
+#define NWE ((uint32_t) 1<<11)
 
-//RAM control pins -- port A pins(27-31)
-//#define BHE 0x8000U<<16 
-//#define BLE 0x4000U<<16 
-//#define WE 	0x2000U<<16
-//#define CE 	0x1000U<<16
-//#define OE 	0x0800U<<16
-#define RAM_STORE 0x1000U<<16
-#define RAM_WRITE 0x0000U<<16
-#define RAM_READ 	0x2000U<<16
-#define RAM_CONTROL_PINS 0xF800U<<16
+//RamChipAddrPins
 
+#define A0 ((uint32_t) 1<<31)    // Vdrug prigoditsa                                                                                                      
+#define A1 ((uint32_t) 1<<29)                                                                                                          
+#define A2 ((uint32_t) 1<<27)                                                                                                          
+#define A3 ((uint32_t) 1<<25)                                                                                                          
+#define A4 ((uint32_t) 1<<23)                                                                                                          
+#define A5 ((uint32_t) 1<<21)                                                                                                          
+#define A6 ((uint32_t) 1<<19)                                                                                                          
+#define A7 ((uint32_t) 1<<17)                                                                                                          
+#define A8 ((uint32_t) 1<<15)                                                                                                          
+#define A9 ((uint32_t) 1<<13)
+#define A10 ((uint32_t) 1<<30)                                                                                                         
+#define A11 ((uint32_t) 1<<28)                                                                                                         
+#define A12 ((uint32_t) 1<<26)                                                                                                         
+#define A13 ((uint32_t) 1<<24)                                                                                                         
+#define A14 ((uint32_t) 1<<22)                                                                                                         
+#define A15 ((uint32_t) 1<<20)                                                                                                         
+#define A16 ((uint32_t) 1<<18)                                                                                                         
+#define A17 ((uint32_t) 1<<16)                                                                                                         
+#define A18 ((uint32_t) 1<<14)                                                                                                         
+#define A19 ((uint32_t) 1<<12) 
 
+#define AllAddrPins ((A0)|(A1)|(A2)|(A3)|(A4)|(A5)|(A6)|(A7)|(A8)|(A9)|(A10)|(A11)|(A12)|(A13)|(A14)|(A15)|(A16)|(A17)|(A18)|(A19))
 
-//RAM address  pins -- port A pins(0-19)
-#define RAM_ADDR_HI 0x000FU<<16
-#define RAM_ADDR_LO 0xFFFFU
+//First RAM Data Bus
+
+#define R1D0 ((uint32_t) 1<<30)
+#define R1D1 ((uint32_t) 1<<26)
+#define R1D2 ((uint32_t) 1<<22)
+#define R1D3 ((uint32_t) 1<<18)
+#define R1D4 ((uint32_t) 1<<14)
+#define R1D5 ((uint32_t) 1<<10)
+#define R1D6 ((uint32_t) 1<<6)
+#define R1D7 ((uint32_t) 1<<5)
+#define R1D8 ((uint32_t) 1<<31)
+#define R1D9 ((uint32_t) 1<<28)
+#define R1D10 ((uint32_t) 1<<23)
+#define R1D11 ((uint32_t) 1<<20)
+#define R1D12 ((uint32_t) 1<<15)
+#define R1D13 ((uint32_t) 1<<13)
+#define R1D14 ((uint32_t) 1<<7)
+#define R1D15 ((uint32_t) 1<<3)
+
+//Second RAM Data Bus
+
+#define R2D0 ((uint32_t) 1<<1)                                                                                                         
+#define R2D1 ((uint32_t) 1<<2)                                                                                                         
+#define R2D2 ((uint32_t) 1<<8)                                                                                                         
+#define R2D3 ((uint32_t) 1<<11)                                                                                                         
+#define R2D4 ((uint32_t) 1<<16)                                                                                                         
+#define R2D5 ((uint32_t) 1<<19)                                                                                                         
+#define R2D6 ((uint32_t) 1<<24)                                                                                                         
+#define R2D7 ((uint32_t) 1<<27)                                                                                                         
+#define R2D8 ((uint32_t) 1<<0)                                                                                                         
+#define R2D9 ((uint32_t) 1<<4)                                                                                                         
+#define R2D10 ((uint32_t) 1<<9)                                                                                                        
+#define R2D11 ((uint32_t) 1<<12)                                                                                                        
+#define R2D12 ((uint32_t) 1<<17)                                                                                                        
+#define R2D13 ((uint32_t) 1<<21)                                                                                                        
+#define R2D14 ((uint32_t) 1<<25)                                                                                                        
+#define R2D15 ((uint32_t) 1<<29)
+
+//Third RAM Data Bus
+
+#define R3D0 ((uint32_t) 1<<7)                                                                                                          
+#define R3D1 ((uint32_t) 1<<8)                                                                                                          
+#define R3D2 ((uint32_t) 1<<14)                                                                                                          
+#define R3D3 ((uint32_t) 1<<16)                                                                                                          
+#define R3D4 ((uint32_t) 1<<22)                                                                                                          
+#define R3D5 ((uint32_t) 1<<24)                                                                                                          
+#define R3D6 ((uint32_t) 1<<31)                                                                                                          
+#define R3D7 ((uint32_t) 1<<2)                                                                                                          
+#define R3D8 ((uint32_t) 1<<6)                                                                                                          
+#define R3D9 ((uint32_t) 1<<10)                                                                                                          
+#define R3D10 ((uint32_t) 1<<15)                                                                                                         
+#define R3D11 ((uint32_t) 1<<18)                                                                                                         
+#define R3D12 ((uint32_t) 1<<23)                                                                                                         
+#define R3D13 ((uint32_t) 1<<26)                                                                                                         
+#define R3D14 ((uint32_t) 1<<30)                                                                                                         
+#define R3D15 ((uint32_t) 1<<4) 
+
+//Fourth RAM Data Bus
+
+#define R4D0 ((uint32_t) 1<<0)                                                                                                          
+#define R4D1 ((uint32_t) 1<<3)                                                                                                          
+#define R4D2 ((uint32_t) 1<<28)                                                                                                          
+#define R4D3 ((uint32_t) 1<<25)                                                                                                          
+#define R4D4 ((uint32_t) 1<<20)                                                                                                          
+#define R4D5 ((uint32_t) 1<<17)                                                                                                          
+#define R4D6 ((uint32_t) 1<<12)                                                                                                          
+#define R4D7 ((uint32_t) 1<<9)                                                                                                          
+#define R4D8 ((uint32_t) 1<<1)                                                                                                          
+#define R4D9 ((uint32_t) 1<<5)                                                                                                          
+#define R4D10 ((uint32_t) 1<<29)                                                                                                         
+#define R4D11 ((uint32_t) 1<<27)                                                                                                         
+#define R4D12 ((uint32_t) 1<<21)                                                                                                         
+#define R4D13 ((uint32_t) 1<<19)                                                                                                         
+#define R4D14 ((uint32_t) 1<<13)                                                                                                         
+#define R4D15 ((uint32_t) 1<<11)
+
+//Fifth RAM Data Bus
+
+#define R5D0 ((uint32_t) 1<<31)                                                                                                          
+#define R5D1 ((uint32_t) 1<<29)                                                                                                          
+#define R5D2 ((uint32_t) 1<<23)                                                                                                          
+#define R5D3 ((uint32_t) 1<<21)                                                                                                          
+#define R5D4 ((uint32_t) 1<<0)                                                                                                          
+#define R5D5 ((uint32_t) 1<<4)                                                                                                          
+#define R5D6 ((uint32_t) 1<<8)                                                                                                          
+#define R5D7 ((uint32_t) 1<<12)                                                                                                          
+#define R5D8 ((uint32_t) 1<<30)                                                                                                          
+#define R5D9 ((uint32_t) 1<<26)                                                                                                          
+#define R5D10 ((uint32_t) 1<<22)                                                                                                         
+#define R5D11 ((uint32_t) 1<<18)                                                                                                         
+#define R5D12 ((uint32_t) 1<<15)                                                                                                         
+#define R5D13 ((uint32_t) 1<<1)                                                                                                         
+#define R5D14 ((uint32_t) 1<<7)                                                                                                         
+#define R5D15 ((uint32_t) 1<<9)      
+
+//Sixth RAM Data Bus
+
+#define R6D0 ((uint32_t) 1<<14)                                                                                                          
+#define R6D1 ((uint32_t) 1<<11)                                                                                                          
+#define R6D2 ((uint32_t) 1<<6)                                                                                                          
+#define R6D3 ((uint32_t) 1<<3)                                                                                                          
+#define R6D4 ((uint32_t) 1<<16)                                                                                                          
+#define R6D5 ((uint32_t) 1<<20)                                                                                                          
+#define R6D6 ((uint32_t) 1<<25)                                                                                                          
+#define R6D7 ((uint32_t) 1<<28)                                                                                                          
+#define R6D8 ((uint32_t) 1<<13)                                                                                                          
+#define R6D9 ((uint32_t) 1<<10)                                                                                                          
+#define R6D10 ((uint32_t) 1<<5)                                                                                                         
+#define R6D11 ((uint32_t) 1<<2)                                                                                                         
+#define R6D12 ((uint32_t) 1<<17)                                                                                                         
+#define R6D13 ((uint32_t) 1<<19)                                                                                                         
+#define R6D14 ((uint32_t) 1<<24)                                                                                                         
+#define R6D15 ((uint32_t) 1<<27)
+
+//Seventh RAM Data Bus
+
+#define R7D0 ((uint32_t) 1<<30)                                                                                                          
+#define R7D1 ((uint32_t) 1<<25)                                                                                                          
+#define R7D2 ((uint32_t) 1<<22)                                                                                                          
+#define R7D3 ((uint32_t) 1<<17)
+#define R7D4 ((uint32_t) 1<<14)                                                                                                          
+#define R7D5 ((uint32_t) 1<<9)                                                                                                          
+#define R7D6 ((uint32_t) 1<<6)                                                                                                          
+#define R7D7 ((uint32_t) 1<<2)                                                                                                          
+#define R7D8 ((uint32_t) 1<<31)                                                                                                          
+#define R7D9 ((uint32_t) 1<<28)                                                                                                          
+#define R7D10 ((uint32_t) 1<<24)                                                                                                         
+#define R7D11 ((uint32_t) 1<<20)                                                                                                         
+#define R7D12 ((uint32_t) 1<<16)                                                                                                         
+#define R7D13 ((uint32_t) 1<<12)                                                                                                         
+#define R7D14 ((uint32_t) 1<<7)                                                                                                         
+#define R7D15 ((uint32_t) 1<<4)
+
+//Eighth RAM Data Bus
+
+#define R8D0 ((uint32_t) 1<<0)                                                                                                          
+#define R8D1 ((uint32_t) 1<<3)                                                                                                          
+#define R8D2 ((uint32_t) 1<<8)                                                                                                          
+#define R8D3 ((uint32_t) 1<<11)                                                                                                          
+#define R8D4 ((uint32_t) 1<<15)                                                                                                          
+#define R8D5 ((uint32_t) 1<<19)                                                                                                          
+#define R8D6 ((uint32_t) 1<<23)                                                                                                          
+#define R8D7 ((uint32_t) 1<<27)                                                                                                          
+#define R8D8 ((uint32_t) 1<<1)                                                                                                          
+#define R8D9 ((uint32_t) 1<<5)                                                                                                          
+#define R8D10 ((uint32_t) 1<<10)                                                                                                         
+#define R8D11 ((uint32_t) 1<<13)                                                                                                         
+#define R8D12 ((uint32_t) 1<<18)                                                                                                         
+#define R8D13 ((uint32_t) 1<<21)                                                                                                         
+#define R8D14 ((uint32_t) 1<<26)                                                                                                         
+#define R8D15 ((uint32_t) 1<<29)

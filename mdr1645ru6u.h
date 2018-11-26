@@ -3,6 +3,7 @@
 #include "mdr32f8_port.h"               // Keil::Drivers:PORT
 
 
+void Ram_Addr_Set(uint32_t Cell_Addr); // set ram addr
 
 //write data bits to ram 
 void ram_write( uint32_t cell_addr, uint16_t *Template);

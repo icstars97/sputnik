@@ -5,12 +5,12 @@
 
 
 //write data bits to ram 
-void ram_write(uint16_t ram_data);
+void ram_write( uint32_t cell_addr, uint16_t *Template);
 
 
 
 //read data bits from ram
-uint16_t ram_read(PortControl* data_port,uint8_t read_bits,uint32_t cell_addr);
+void ram_read(uint32_t cell_addr, uint16_t *Read_Array);
 
-
+//Compare Read_Array (ram_data) and Template (Pattern)
 uint64_t compare_data(uint16_t pattern[8], uint16_t ram_data[8],uint32_t cell_addr);

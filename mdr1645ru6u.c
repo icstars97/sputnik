@@ -44,10 +44,10 @@ void ram_write( uint32_t cell_addr, uint16_t *Template)
 	PORTD->SOE=1;	
 	PORTE->SOE=1;	
 	
-	RAM_Addr_Set(cell_addr); 									//Set Cell Addr
+	Ram_Addr_Set(cell_addr); 									//Set Cell Addr
 	
 	PORT_ResetBits (PORTA, NCE | NOE ); 				//Drop nCE and nOE (pull to 0)
-	ROPT_ResetBits (PORTA, NWE);					      //Drop nWe to 0 
+	PORT_ResetBits (PORTA, NWE);					      //Drop nWe to 0 
 	for (uint8_t j=0; j<8; j++)
 	{
 		for (uint8_t i = 0; i<16; i++)

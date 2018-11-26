@@ -6,7 +6,7 @@
 #include "mdr32f8_port.h"   						// Keil::Drivers:PORT
 #include "ram_macros.h"									//ram pin/command macros file
 #include "mdr1645ru6u.h"								//ram functions header file
-//port A initialization structure
+//port A-E initialization structure
 PORT_InitTypeDef PORT_InitStruct;
 
 int main(void)
@@ -32,7 +32,7 @@ CLKCTRL_PER0_CLKcmd(CLKCTRL_PER0_CLK_MDR_PORTE_EN	, ENABLE); //port E
 
 //port A
 //pins select
-PORT_InitStruct.PORT_Pin = RAM_CONTROL_PINS | RAM_ADDR_HI | RAM_ADDR_LO;
+PORT_InitStruct.PORT_Pin = 1 ;
 //configure input mode/output mode
 PORT_InitStruct.PORT_SOE = PORT_SOE_OUT;
 //configure output type
@@ -40,27 +40,21 @@ PORT_InitStruct.PORT_SANALOG = PORT_SANALOG_DIGITAL;
 //configure driver mode
 PORT_InitStruct.PORT_SPD = PORT_SPD_OFF;
 //configure port speed(eto po suti dlitelnost frontov impulsa)
-PORT_InitStruct.PORT_SPWR = PORT_SPWR_300; //ne uveren chto suda peredavat, pust poka dlitelnost maksimalnaya budet
+PORT_InitStruct.PORT_SPWR = PORT_SPWR_10; //ne uveren chto suda peredavat, pust poka dlitelnost maksimalnaya budet' Evgen: minimalnaya
 //port A intialization
 PORT_Init(PORTA, &PORT_InitStruct);
- 
-PORT_SetBits(PORTA, RAM_STORE ); //ram output disabled, storage mode
+
+//Port B
+PORT_Init(PORTB, &PORT_InitStruct);
+
+//Port C
+PORT_Init(PORTC, &PORT_InitStruct);
+//Port D
+PORT_Init(PORTD, &PORT_InitStruct);
+//Port E
+PORT_Init(PORTE, &PORT_InitStruct);
 
 while(1)
 {
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 }

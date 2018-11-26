@@ -5,6 +5,7 @@
 #include "ram_macros.h"									//ram pin/command macros file
 #include <stdlib.h>
 
+
 //Needed For Data Tranfer
 uint32_t RAM_1_Data_Bus[16] ={ R1D0, R1D1, R1D2, R1D3, R1D4, R1D5, R1D6, R1D7, R1D8, R1D9, R1D10, R1D11, R1D12, R1D13, R1D14, R1D15};                                                               
 uint32_t RAM_2_Data_Bus[16] ={ R2D0, R2D1, R2D2, R2D3, R2D4, R2D5, R2D6, R2D7, R2D8, R2D9, R2D10, R2D11, R2D12, R2D13, R2D14, R2D15};                                                               
@@ -93,6 +94,9 @@ void ram_read(uint32_t cell_addr, uint16_t *Read_Array)
 	}
 	PORT_SetBits(PORTA, NOE | NCE |NWE);												//Pull Control Signals Up
 }
+
+
+
 
 uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr)
 {

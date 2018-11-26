@@ -30,21 +30,21 @@ CLKCTRL_PER0_CLKcmd(CLKCTRL_PER0_CLK_MDR_PORTE_EN	, ENABLE); //port E
 	
 //configure port A-E
 
-//port A
-//pins select
-PORT_InitStruct.PORT_Pin = RAM_CONTROL_PINS | RAM_ADDR_HI | RAM_ADDR_LO;
-//configure input mode/output mode
-PORT_InitStruct.PORT_SOE = PORT_SOE_OUT;
-//configure output type
-PORT_InitStruct.PORT_SANALOG = PORT_SANALOG_DIGITAL;
-//configure driver mode
-PORT_InitStruct.PORT_SPD = PORT_SPD_OFF;
-//configure port speed(eto po suti dlitelnost frontov impulsa)
-PORT_InitStruct.PORT_SPWR = PORT_SPWR_300; //ne uveren chto suda peredavat, pust poka dlitelnost maksimalnaya budet
-//port A intialization
-PORT_Init(PORTA, &PORT_InitStruct);
- 
-PORT_SetBits(PORTA, RAM_STORE ); //ram output disabled, storage mode
+////port A
+////pins select
+//PORT_InitStruct.PORT_Pin = RAM_CONTROL_PINS | RAM_ADDR_HI | RAM_ADDR_LO;
+////configure input mode/output mode
+//PORT_InitStruct.PORT_SOE = PORT_SOE_OUT;
+////configure output type
+//PORT_InitStruct.PORT_SANALOG = PORT_SANALOG_DIGITAL;
+////configure driver mode
+//PORT_InitStruct.PORT_SPD = PORT_SPD_OFF;
+////configure port speed(eto po suti dlitelnost frontov impulsa)
+//PORT_InitStruct.PORT_SPWR = PORT_SPWR_300; //ne uveren chto suda peredavat, pust poka dlitelnost maksimalnaya budet
+////port A intialization
+//PORT_Init(PORTA, &PORT_InitStruct);
+// 
+//PORT_SetBits(PORTA, RAM_STORE ); //ram output disabled, storage mode
 
 while(1)
 {

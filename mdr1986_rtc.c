@@ -25,11 +25,11 @@ void RTC_Init(void)
 	BKP->RTC_DIV_TMR1 = 40000;
 	BKP->RTC_DIV_TMR2 = 40000;
 	
-0;
+
 	
 	BKP->REG_63_TMR0 = (0<<31) | (1<<4) |(0x0<<2);   //reset bit =0, rtc enable, clock source - low speed internal
-	BKP->REG_63_TMR1 = (0<<31) | (1<<4) |(0x0<<3) | (0<<2);   
-	BKP->REG_63_TMR2 = (0<<31) | (1<<4) |(0x0<<3) | (0<<2);
+	BKP->REG_63_TMR1 = (0<<31) | (1<<4) |(0x0<<3);  
+	BKP->REG_63_TMR2 = (0<<31) | (1<<4) |(0x0<<3);
 	
 	
 	

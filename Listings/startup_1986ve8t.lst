@@ -929,7 +929,7 @@ ork --depend=.\objects\startup_1986ve8t.d -o.\objects\startup_1986ve8t.o -I.\RT
 E\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:\Keil_
 v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\inc -IC:
 \Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\MDR32F8_StdPeriph_Driver\inc --pre
-define="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 526" --predefine="_R
+define="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 523" --predefine="_R
 TE_ SETA 1" --predefine="USE_MDR32F8 SETA 1" --list=.\listings\startup_1986ve8t
 .lst RTE\Device\MDR32F8\startup_1986ve8t.s
 

@@ -10,8 +10,7 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
+      <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>MDR32F8</Device>
@@ -399,6 +398,16 @@
               <FileName>ram_macros.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\ram_macros.h</FilePath>
+            </File>
+            <File>
+              <FileName>mdr1986_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mdr1986_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>mdr1986_rtc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\mdr1986_rtc.h</FilePath>
             </File>
           </Files>
         </Group>

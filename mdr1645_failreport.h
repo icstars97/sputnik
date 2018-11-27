@@ -1,6 +1,19 @@
 
 
-
+typedef struct{
+	
+	uint16_t failcount; // total ram failure count
+	uint16_t last_timestamp; // timestamp of last failures registered
+	uint16_t measurements;  // measurements count (number of series with failures)
+	
+	
+	
+	
+	
+	
+	
+	
+}RAM_FailReport;
 
 
 

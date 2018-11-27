@@ -6,17 +6,7 @@
 
 
 
-typedef struct{
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}RAM_FailReport;
+
 
 uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr)
 {
@@ -74,4 +64,6 @@ void RAM_SaveFailArray(void)
 
 RAM_FailReport GetFailReport(void)
 {
+	
+	
 }

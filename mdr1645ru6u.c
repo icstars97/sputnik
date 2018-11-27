@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "ram_macros.h"
 #include "mdr1645ru6u.h"
+#include "mdr1986_rtc.h"
 
 //Needed For Data Tranfer
 uint32_t RAM_1_Data_Bus[16] ={ R1D0, R1D1, R1D2, R1D3, R1D4, R1D5, R1D6, R1D7, R1D8, R1D9, R1D10, R1D11, R1D12, R1D13, R1D14, R1D15};                                                               
@@ -122,9 +123,10 @@ uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_ad
 	uint16_t offset;
 	uint8_t err_num;
 	uint32_t* fail_arr;
-	fail_arr=(uint32_t*)malloc(sizeof(uint32_t));
-	fail_arr[0]=cell_addr;
-	for(i=0;i<8;i++)
+	fail_arr=(uint32_t*)malloc(2*sizeof(uint32_t));
+	fail_arr[0]=RTC_GetTime();
+	fail_arr[1]=cell_addr;
+	for(i=1;i<=8;i++)
 		{
 			
 			if (pattern[i]!=ram_data[i])
@@ -165,5 +167,4 @@ uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_ad
 		return &fail_arr[0];
 }
 
-void 
 

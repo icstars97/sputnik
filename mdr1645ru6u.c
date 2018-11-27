@@ -34,10 +34,19 @@ void RAM_Addr_Set(uint32_t Cell_Addr)
 		}
 }				
 
-//write data to ram
+
+
+//write data to specific cell in each ram
 
 void RAM_write( uint32_t cell_addr, uint16_t *Template)
 {
+/*OE    ______/---------\_______	
+	ADDR  
+	*/
+	
+	
+	
+	
 	PortControl* Port_Used = (PortControl *) ((uint32_t) (0x40081000)); // For PORTx invokes
 	PORT_SetBits (PORTA, NOE); 									//RAM Data inputs enter Z state
 	PORTB->SOE=1;	
@@ -45,21 +54,22 @@ void RAM_write( uint32_t cell_addr, uint16_t *Template)
 	PORTD->SOE=1;	
 	PORTE->SOE=1;	
 	
-	RAM_Addr_Set(cell_addr); 									//Set Cell Addr
-	
-	PORT_ResetBits (PORTA, NCE | NOE ); 				//Drop nCE and nOE (pull to 0)
+
+	RAM_Addr_Set(cell_addr); 										//Set Cell Addr
+
+	PORT_ResetBits (PORTA, NOE ); 							//Drop nOE (pull to 0)
 	PORT_ResetBits (PORTA, NWE);					      //Drop nWe to 0 
 	for (uint8_t j=0; j<8; j++)
 	{
 		for (uint8_t i = 0; i<16; i++)
 		{
-			if (((Template [j])>>i & (1<<0)) == 1<<0)
+			if (((Template [j])>>i & 1) == 1)
 				PORT_SetBits(Port_Used, ALLRAM_Data_Serial_Bus[j*16 + i]);
 			else
 				PORT_ResetBits(Port_Used, ALLRAM_Data_Serial_Bus[j*16 + i]);
 		}
 	if (j%2==1) 
-		Port_Used+=1<<3;
+		Port_Used+=0x1000;
   }
 	PORT_SetBits (PORTA, NWE);											//Pull NWE UP (Write!)
 	PORT_SetBits (PORTA, NOE);											//Turn it off
@@ -87,14 +97,22 @@ void RAM_read(uint32_t cell_addr, uint16_t *Read_Array)
 	{
 		for (uint8_t i=0; i<16; i++)
 		{
-			Read_Array[j]=Read_Array[j]+((PORT_ReadInputDataBit(Port_Used, RAM_1_8_Addr_Bus[16*j + i]))<<i);
+			Read_Array[j]=( Read_Array[j]+(((uint16_t)( PORT_ReadInputDataBit (Port_Used, RAM_1_8_Addr_Bus[16*j + i]) ) ) <<i) );
 		}
 		if (j%2==1)
-			Port_Used+=1<<3;
+			Port_Used+=0x1000;
 	}
-	PORT_SetBits(PORTA, NOE | NCE |NWE);												//Pull Control Signals Up
+	PORT_SetBits(PORTA, NOE);												//Pull Control Signals Up
 }
-
+//Fill All RAMs 
+void Ram_Fill( uint16_t *Template)
+{
+	uint32_t Cell_Addr;
+	for (Cell_Addr=0 ; Cell_Addr<(1<<20); Cell_Addr++)
+	{
+		RAM_write (Cell_Addr, Template);
+	}
+}
 
 
 
@@ -146,4 +164,6 @@ uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_ad
 		}	
 		return &fail_arr[0];
 }
+
+void 
 

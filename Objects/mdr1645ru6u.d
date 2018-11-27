@@ -12,4 +12,6 @@
 .\objects\mdr1645ru6u.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\mdr1645ru6u.o: C:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_port.h
 .\objects\mdr1645ru6u.o: C:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_config.h
+.\objects\mdr1645ru6u.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\mdr1645ru6u.o: ram_macros.h
+.\objects\mdr1645ru6u.o: mdr1645ru6u.h

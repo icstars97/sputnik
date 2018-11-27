@@ -2,9 +2,9 @@
 #include "MDR1986VE8T.h"
 #include "mdr32f8_clkctrl.h"            // Keil::Drivers:CLKCTRL
 #include "mdr32f8_port.h"               // Keil::Drivers:PORT
-#include "ram_macros.h"									//ram pin/command macros file
 #include <stdlib.h>
-
+#include "ram_macros.h"
+#include "mdr1645ru6u.h"
 
 //Needed For Data Tranfer
 uint32_t RAM_1_Data_Bus[16] ={ R1D0, R1D1, R1D2, R1D3, R1D4, R1D5, R1D6, R1D7, R1D8, R1D9, R1D10, R1D11, R1D12, R1D13, R1D14, R1D15};                                                               
@@ -35,7 +35,9 @@ void RAM_Addr_Set(uint32_t Cell_Addr)
 }				
 
 
+
 //write data to specific cell in each ram
+
 void RAM_write( uint32_t cell_addr, uint16_t *Template)
 {
 /*OE    ______/---------\_______	
@@ -52,8 +54,9 @@ void RAM_write( uint32_t cell_addr, uint16_t *Template)
 	PORTD->SOE=1;	
 	PORTE->SOE=1;	
 	
+
 	RAM_Addr_Set(cell_addr); 										//Set Cell Addr
-	
+
 	PORT_ResetBits (PORTA, NOE ); 							//Drop nOE (pull to 0)
 	PORT_ResetBits (PORTA, NWE);					      //Drop nWe to 0 
 	for (uint8_t j=0; j<8; j++)

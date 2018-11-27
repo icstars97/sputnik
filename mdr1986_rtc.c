@@ -1,7 +1,7 @@
 #include "MDR1986VE8T.h"
 #include "mdr32f8_clkctrl.h"            // Keil::Drivers:CLKCTRL
 #include "mdr1986_rtc.h"              
-
+#include <stdbool.h>
 
 
 
@@ -25,13 +25,11 @@ void RTC_Init(void)
 	BKP->RTC_DIV_TMR1 = 40000;
 	BKP->RTC_DIV_TMR2 = 40000;
 	
-//	BKP->RTC_PRL_TMR0 = 40000;	//ili eto prescaler, ya ne ochen ponyal
-//	BKP->RTC_PRL_TMR1 = 40000;
-//	BKP->RTC_PRL_TMR2 = 40000;
+0;
 	
-	BKP->REG_63_TMR0 = (0<<31) | (1<<3);   //reset bit =0, rtc enable, clock source - low speed internal
-	BKP->REG_63_TMR1 = (0<<31) | (1<<3);   
-	BKP->REG_63_TMR2 = (0<<31) | (1<<3); 
+	BKP->REG_63_TMR0 = (0<<31) | (1<<4) |(0x0<<2);   //reset bit =0, rtc enable, clock source - low speed internal
+	BKP->REG_63_TMR1 = (0<<31) | (1<<4) |(0x0<<3) | (0<<2);   
+	BKP->REG_63_TMR2 = (0<<31) | (1<<4) |(0x0<<3) | (0<<2);
 	
 	
 	

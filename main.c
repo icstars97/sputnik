@@ -1,11 +1,9 @@
-
-
-
 #include "MDR1986VE8T.h"
 #include "mdr32f8_clkctrl.h"            // Keil::Drivers:CLKCTRL
 #include "mdr32f8_port.h"   						// Keil::Drivers:PORT
-#include "ram_macros.h"									//ram pin/command macros file
-#include "mdr1645ru6u.h"								//ram functions header file
+
+
+//ram functions header file
 //port A-E initialization structure
 PORT_InitTypeDef PORT_InitStruct;
 

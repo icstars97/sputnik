@@ -8,7 +8,7 @@
 
 
 
-uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr)
+uint32_t* build_FailArray(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr)
 {
 	uint8_t i,j=0,k=0,failcount=0;
 	uint16_t offset;
@@ -57,7 +57,7 @@ uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_ad
 		}	
 		return &fail_arr[0];
 }
-void RAM_SaveFailArray(void)
+void RAM_SaveFailArray(uint32_t* storage,uint16_t volume)
 {
 }
 

@@ -10,20 +10,20 @@
 
 uint32_t* build_FailArray(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr)
 {
-	uint8_t i,j=0,k=0,failcount=0;
+	uint8_t i,j=0,k=0,failcount=0,errcount=0;;
 	uint16_t offset;
 	uint8_t err_num;
 	uint32_t* fail_arr;
 	fail_arr=(uint32_t*)malloc(2*sizeof(uint32_t));
-	fail_arr[0]=RTC_GetTime();
 	fail_arr[1]=cell_addr;
-	for(i=1;i<=8;i++)
+	for(i=1;i<9;i++)
 		{
 			
 			if (pattern[i]!=ram_data[i])
 			{	
+				errcount++;
 				fail_arr[k]=(fail_arr[k]<<4) | i;
-		
+				
 				offset=pattern[i] ^ ram_data[i];
 				
 				while(offset)
@@ -54,11 +54,31 @@ uint32_t* build_FailArray(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell
 			k++;
 			fail_arr[k]=cell_addr;
 			}	
-		}	
-		return &fail_arr[0];
+		}
+		if (errcount)
+		{
+			fail_arr[errcount]|=(1<<0);
+			fail_arr[0]=RTC_GetTime();
+		}else
+		{
+			fail_arr[1]=0;
+		}
+			return &fail_arr[0];
 }
-void RAM_SaveFailArray(uint32_t* storage,uint16_t volume)
+//storage[0] reserved for report
+//			XXXX 		XXXX 		XXXX 		XXXX 		XXXX 		XXXX 		XXXX 		XX00 
+//		  |space left      | failure count   |last timestamp number|
+uint8_t RAM_SaveFailArray(uint32_t* storage,uint32_t* fail_arr)
 {
+	uint16_t errcount=0,index,i;
+	if (((storage[0] & (0x3FF<<22))>>22)<999)
+	{
+		index=((storage[0] & (0x3FF<<22))>>22)+1;
+		
+		
+		
+	}
+	
 }
 
 

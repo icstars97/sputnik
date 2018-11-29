@@ -21,4 +21,5 @@ typedef struct{
 uint32_t* build_FailArray(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr); //compare data extracted from RAM with data in template
 
 
-void RAM_SaveFailArray(uint32_t* storage,uint16_t volume); //save failure array to failure storage
+uint8_t RAM_SaveFailArray(uint32_t* storage,uint32_t* fail_arr); //save failure array to failure storage
+

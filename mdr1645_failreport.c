@@ -70,14 +70,25 @@ uint32_t* build_FailArray(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell
 //		  |space left      | failure count   |last timestamp number|
 uint8_t RAM_SaveFailArray(uint32_t* storage,uint32_t* fail_arr)
 {
-	uint16_t errcount=0,index,i;
+	uint16_t errcount,index,timestamp_pos,i=1;
 	if (((storage[0] & (0x3FF<<22))>>22)<999)
 	{
-		index=((storage[0] & (0x3FF<<22))>>22)+1;
-		
-		
+		index=999-((storage[0] & (0x3FF<<22))>>22)+2;
+		errcount=(storage[0] & (0x3FF<<12))>>12;
+		timestamp_pos=index-1;
+		storage[index-1]=fail_arr[0];
+		while(!(fail_arr[i] & (1<<0)))
+		{
+			storage[index]=fail_arr[i];
+			i++;
+			index++;
+			if (fail_arr[i] & (0xF<<1)) errcount+=2;
+			else errcount++;
+		}
+		storage[0]=((999-index)<<22) | (errcount<<12) | (timestamp_pos<<2);
 		
 	}
+	return ((storage[0] & (0x3FF<<22))>>22);
 	
 }
 
@@ -86,4 +97,7 @@ RAM_FailReport GetFailReport(void)
 {
 	
 	
+}
+void RAM_StorageClear(uint32_t* storage)
+{
 }

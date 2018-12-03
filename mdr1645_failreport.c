@@ -93,11 +93,20 @@ uint8_t RAM_SaveFailArray(uint32_t* storage,uint32_t* fail_arr)
 }
 
 
-RAM_FailReport GetFailReport(void)
+RAM_FailReport GetFailReport(uint32_t* storage)
 {
+	RAM_FailReport report;
+	report.failcount=(storage[0] & (0x3FF<<12))>>12;
+	report.free_space=(storage[0] & (0x3FF<<22))>>22;
+	report.last_timestamp=(storage[0] & (0x3FF<<2))>>2;
+	return report;
 	
 	
 }
 void RAM_StorageClear(uint32_t* storage)
 {
+		for (int i=0;i<1000;i++)
+	{	
+		storage[i]=0;
+	}
 }

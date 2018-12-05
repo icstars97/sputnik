@@ -1,6 +1,7 @@
 #include "MDR1986VE8T.h"
 #include "mdr32f8_clkctrl.h"            // Keil::Drivers:CLKCTRL
 #include "mdr1986_rtc.h"              
+#include <stdbool.h>
 
 
 

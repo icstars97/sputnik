@@ -15,3 +15,4 @@
 .\objects\mdr1645ru6u.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\mdr1645ru6u.o: ram_macros.h
 .\objects\mdr1645ru6u.o: mdr1645ru6u.h
+.\objects\mdr1645ru6u.o: mdr1986_rtc.h

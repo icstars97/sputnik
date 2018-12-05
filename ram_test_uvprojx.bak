@@ -11,6 +11,7 @@
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>MDR32F8</Device>
@@ -408,6 +409,26 @@
               <FileName>mdr1986_rtc.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\mdr1986_rtc.h</FilePath>
+            </File>
+            <File>
+              <FileName>mdr1645_failreport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mdr1645_failreport.c</FilePath>
+            </File>
+            <File>
+              <FileName>mdr1645_failreport.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\mdr1645_failreport.h</FilePath>
+            </File>
+            <File>
+              <FileName>Major.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Major.c</FilePath>
+            </File>
+            <File>
+              <FileName>Major.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Major.h</FilePath>
             </File>
           </Files>
         </Group>

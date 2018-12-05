@@ -3,58 +3,126 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.23.0.0
+IDE-Version: µVision V5.24.2.0
 Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Admin LAB306-1, National Research Nuclear University MEPhI, LIC=----
+License Information: ô ÿ, ô, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.23
+Toolchain:       MDK-Lite  Version: 5.24.1
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 4 (build 422)
-Assembler:       Armasm.exe V5.06 update 4 (build 422)
-Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
-Library Manager: ArmAr.exe V5.06 update 4 (build 422)
-Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
-CPU DLL:         SARMCM3.DLL V5.23
-Dialog DLL:      DCM.DLL V1.15.0.0
-Target DLL:      UL2CM3.DLL V1.159.7.0
-Dialog DLL:      TCM.DLL V1.27.0.0
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      UL2CM3.DLL V1.160.3.0
+Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
-C:\Users\Student\Documents\c15601\ñïóòíèê ìèëàíäð\sputnik\ram_test.uvprojx
-Project File Date:  11/27/2018
+C:\MCaMP\sputnik\sputnik\ram_test.uvprojx
+Project File Date:  12/05/2018
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target 1'
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling mdr1986_rtc.c...
+mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
+  void RTC_Init(); // real time clock init
+mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1986_rtc.c(17): warning:  #61-D: integer operation result is out of range
+  	
+KP->REG_63_TMR0 = 1<<31; //rtc reset 
+mdr1986_rtc.c(17): warning:  #68-D: integer conversion resulted in a change of sign
+  	
+KP->REG_63_TMR0 = 1<<31; //rtc reset 
+mdr1986_rtc.c(18): warning:  #61-D: integer operation result is out of range
+  	
+KP->REG_63_TMR1 = 1<<31;
+mdr1986_rtc.c(18): warning:  #68-D: integer conversion resulted in a change of sign
+  	
+KP->REG_63_TMR1 = 1<<31;
+mdr1986_rtc.c(19): warning:  #61-D: integer operation result is out of range
+  	
+KP->REG_63_TMR2 = 1<<31;
+mdr1986_rtc.c(19): warning:  #68-D: integer conversion resulted in a change of sign
+  	
+KP->REG_63_TMR2 = 1<<31;
+mdr1986_rtc.c(60): warning:  #1-D: last line of file ends without a newline
+  }
+mdr1986_rtc.c: 10 warnings, 0 errors
 compiling mdr1645ru6u.c...
 ram_macros.h(181): warning:  #1-D: last line of file ends without a newline
   #define R8D15 ((uint32_t) 1<<29)
-mdr1645ru6u.h(18): warning:  #1-D: last line of file ends without a newline
-  uint32_t* compare_data(uint16_t pattern[8],uint16_t ram_data[8],uint32_t cell_addr);
-mdr1645ru6u.c: 2 warnings, 0 errors
+mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
+  void RTC_Init(); // real time clock init
+mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1645ru6u.c: 4 warnings, 0 errors
+compiling main.c...
+main.c(58): warning:  #1-D: last line of file ends without a newline
+  }
+main.c: 1 warning, 0 errors
+compiling mdr1645_failreport.c...
+mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
+  void RTC_Init(); // real time clock init
+mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
+  uint32_t RTC_GetTime(); // get value of real time clock main counter
+mdr1645_failreport.h(26): warning:  #1-D: last line of file ends without a newline
+  void RAM_StorageClear(uint32_t* storage); //clear failure storage
+mdr1645_failreport.c(74): warning:  #61-D: integer operation result is out of range
+  	if (((*storage_info & (0x3FF<<22))>>22)<999)
+mdr1645_failreport.c(74): warning:  #68-D: integer conversion resulted in a change of sign
+  	if (((*storage_info & (0x3FF<<22))>>22)<999)
+mdr1645_failreport.c(76): warning:  #61-D: integer operation result is out of range
+  		index=999-((*storage_info  & (0x3FF<<22))>>22)+1; // start position = total volume - free space + 1
+mdr1645_failreport.c(76): warning:  #68-D: integer conversion resulted in a change of sign
+  		index=999-((*storage_info  & (0x3FF<<22))>>22)+1; // start position = total volume - free space + 1
+mdr1645_failreport.c(90): warning:  #61-D: integer operation result is out of range
+  	return ((storage[0] & (0x3FF<<22))>>22);//ya ne znayu zachem eto zdes no udalyat poka ne budu
+mdr1645_failreport.c(90): warning:  #68-D: integer conversion resulted in a change of sign
+  	return ((storage[0] & (0x3FF<<22))>>22);//ya ne znayu zachem eto zdes no udalyat poka ne budu
+mdr1645_failreport.c(99): warning:  #61-D: integer operation result is out of range
+  	report.free_space=(*storage_info & (0x3FF<<22))>>22;
+mdr1645_failreport.c(99): warning:  #68-D: integer conversion resulted in a change of sign
+  	report.free_space=(*storage_info & (0x3FF<<22))>>22;
+mdr1645_failreport.c: 12 warnings, 0 errors
+assembling startup_1986ve8t.s...
+compiling Major.c...
+compiling mdr32f8_clkctrl.c...
+compiling mdr32f8_ebc.c...
+compiling mdr32f8_port.c...
+compiling mdr32f8_tim.c...
 linking...
 Program Size: Code=2060 RO-data=584 RW-data=0 ZI-data=18560  
-".\Objects\ram_test.axf" - 0 Error(s), 2 Warning(s).
+".\Objects\ram_test.axf" - 0 Error(s), 27 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.5.4.0.pack
-                ARM::CMSIS:CORE:5.1.2
+                ARM.CMSIS.5.4.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
    * Component: CORE Version: 5.1.2
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.MDR32F8.0.1.pack
-                Keil::Device:Startup:0.0.1
+                Keil.MDR32F8.0.1
                 Milandr MDR32F8 Series Device Support, Drivers and Examples
-   * Component: Startup Version: 0.0.1
-   * Component: PORT Version: 0.0.1
-   * Component: CLKCTRL Version: 0.0.1
    * Component: TIM Version: 0.0.1
-   * Component: EBC Version: 0.0.1
+   * Component: PORT Version: 0.0.1
    * Component: LIB Version: 0.0.1
+   * Component: EBC Version: 0.0.1
+   * Component: CLKCTRL Version: 0.0.1
+   * Component: Startup Version: 0.0.1
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Target_1
@@ -64,30 +132,30 @@ Package Vendor: Keil
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:5.1.2
-
-   * Component: Keil::Device:Startup:0.0.1
-      Source file:   Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\startup\arm\startup_1986ve8t.s
+   * Component: Keil::Drivers:TIM:0.0.1
+      Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_tim.c
+      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_tim.h
 
    * Component: Keil::Drivers:PORT:0.0.1
       Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_port.h
       Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_port.c
 
-   * Component: Keil::Drivers:CLKCTRL:0.0.1
-      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_clkctrl.h
-      Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_clkctrl.c
-
-   * Component: Keil::Drivers:TIM:0.0.1
-      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_tim.h
-      Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_tim.c
+   * Component: Keil::Drivers:LIB:0.0.1
+      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_lib.h
 
    * Component: Keil::Drivers:EBC:0.0.1
       Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_ebc.h
       Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_ebc.c
 
-   * Component: Keil::Drivers:LIB:0.0.1
-      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_lib.h
-Build Time Elapsed:  00:00:01
+   * Component: Keil::Drivers:CLKCTRL:0.0.1
+      Include file:  Libraries\MDR32F8_StdPeriph_Driver\inc\mdr32f8_clkctrl.h
+      Source file:   Libraries\MDR32F8_StdPeriph_Driver\src\mdr32f8_clkctrl.c
+
+   * Component: Keil::Device:Startup:0.0.1
+      Source file:   Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\startup\arm\startup_1986ve8t.s
+
+   * Component: ARM::CMSIS:CORE:5.1.2
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

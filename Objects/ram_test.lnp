@@ -2,11 +2,13 @@
 ".\objects\main.o"
 ".\objects\mdr1645ru6u.o"
 ".\objects\mdr1986_rtc.o"
+".\objects\mdr1645_failreport.o"
+".\objects\major.o"
 ".\objects\startup_1986ve8t.o"
 ".\objects\mdr32f8_clkctrl.o"
 ".\objects\mdr32f8_ebc.o"
 ".\objects\mdr32f8_port.o"
 ".\objects\mdr32f8_tim.o"
---ro-base 0x20006000 --entry 0x20006000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--ro-base 0x20006000 --entry 0x20006000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\ram_test.map" -o .\Objects\ram_test.axf

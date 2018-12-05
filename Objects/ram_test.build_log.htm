@@ -26,84 +26,8 @@ Project File Date:  12/05/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Target 1'
-compiling mdr1986_rtc.c...
-mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
-  void RTC_Init(); // real time clock init
-mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1986_rtc.c(17): warning:  #61-D: integer operation result is out of range
-  	
-KP->REG_63_TMR0 = 1<<31; //rtc reset 
-mdr1986_rtc.c(17): warning:  #68-D: integer conversion resulted in a change of sign
-  	
-KP->REG_63_TMR0 = 1<<31; //rtc reset 
-mdr1986_rtc.c(18): warning:  #61-D: integer operation result is out of range
-  	
-KP->REG_63_TMR1 = 1<<31;
-mdr1986_rtc.c(18): warning:  #68-D: integer conversion resulted in a change of sign
-  	
-KP->REG_63_TMR1 = 1<<31;
-mdr1986_rtc.c(19): warning:  #61-D: integer operation result is out of range
-  	
-KP->REG_63_TMR2 = 1<<31;
-mdr1986_rtc.c(19): warning:  #68-D: integer conversion resulted in a change of sign
-  	
-KP->REG_63_TMR2 = 1<<31;
-mdr1986_rtc.c(60): warning:  #1-D: last line of file ends without a newline
-  }
-mdr1986_rtc.c: 10 warnings, 0 errors
-compiling mdr1645ru6u.c...
-ram_macros.h(181): warning:  #1-D: last line of file ends without a newline
-  #define R8D15 ((uint32_t) 1<<29)
-mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
-  void RTC_Init(); // real time clock init
-mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1645ru6u.c: 4 warnings, 0 errors
-compiling main.c...
-main.c(58): warning:  #1-D: last line of file ends without a newline
-  }
-main.c: 1 warning, 0 errors
-compiling mdr1645_failreport.c...
-mdr1986_rtc.h(6): warning:  #1295-D: Deprecated declaration RTC_Init - give arg types
-  void RTC_Init(); // real time clock init
-mdr1986_rtc.h(13): warning:  #1-D: last line of file ends without a newline
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1986_rtc.h(13): warning:  #1295-D: Deprecated declaration RTC_GetTime - give arg types
-  uint32_t RTC_GetTime(); // get value of real time clock main counter
-mdr1645_failreport.h(26): warning:  #1-D: last line of file ends without a newline
-  void RAM_StorageClear(uint32_t* storage); //clear failure storage
-mdr1645_failreport.c(74): warning:  #61-D: integer operation result is out of range
-  	if (((*storage_info & (0x3FF<<22))>>22)<999)
-mdr1645_failreport.c(74): warning:  #68-D: integer conversion resulted in a change of sign
-  	if (((*storage_info & (0x3FF<<22))>>22)<999)
-mdr1645_failreport.c(76): warning:  #61-D: integer operation result is out of range
-  		index=999-((*storage_info  & (0x3FF<<22))>>22)+1; // start position = total volume - free space + 1
-mdr1645_failreport.c(76): warning:  #68-D: integer conversion resulted in a change of sign
-  		index=999-((*storage_info  & (0x3FF<<22))>>22)+1; // start position = total volume - free space + 1
-mdr1645_failreport.c(90): warning:  #61-D: integer operation result is out of range
-  	return ((storage[0] & (0x3FF<<22))>>22);//ya ne znayu zachem eto zdes no udalyat poka ne budu
-mdr1645_failreport.c(90): warning:  #68-D: integer conversion resulted in a change of sign
-  	return ((storage[0] & (0x3FF<<22))>>22);//ya ne znayu zachem eto zdes no udalyat poka ne budu
-mdr1645_failreport.c(99): warning:  #61-D: integer operation result is out of range
-  	report.free_space=(*storage_info & (0x3FF<<22))>>22;
-mdr1645_failreport.c(99): warning:  #68-D: integer conversion resulted in a change of sign
-  	report.free_space=(*storage_info & (0x3FF<<22))>>22;
-mdr1645_failreport.c: 12 warnings, 0 errors
-assembling startup_1986ve8t.s...
-compiling Major.c...
-compiling mdr32f8_clkctrl.c...
-compiling mdr32f8_ebc.c...
-compiling mdr32f8_port.c...
-compiling mdr32f8_tim.c...
-linking...
-Program Size: Code=2060 RO-data=584 RW-data=0 ZI-data=18560  
-".\Objects\ram_test.axf" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+".\Objects\ram_test.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -155,7 +79,7 @@ Package Vendor: Keil
       Source file:   Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\startup\arm\startup_1986ve8t.s
 
    * Component: ARM::CMSIS:CORE:5.1.2
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

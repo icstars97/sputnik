@@ -15,7 +15,7 @@ uint32_t Triple_Read (uint32_t *PlaceToRead)
 	uint32_t Read_Value;
 	for(uint8_t i=0; i<32; i++)
 	{
-		for(uint8_t j=0; i<3; i++)
+		for(uint8_t j=0; j<3; j++)
 		{
 			if ((PlaceToRead[j]>>i & 1 )==1) 
 				Amount_of_1++;

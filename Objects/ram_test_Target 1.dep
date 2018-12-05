@@ -63,7 +63,7 @@ I (mdr1986_rtc.h)(0x5C07B737)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588BC994)
 I (mdr1645_failreport.h)(0x5C07B737)
 F (.\mdr1645_failreport.h)(0x5C07B737)()
-F (.\Major.c)(0x5C07BDDA)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\MDR32F8_StdPeriph_Driver\inc-D__UVISION_VERSION="524" -D_RTE_ -DUSE_MDR32F8-o .\objects\major.o --omf_browse .\objects\major.crf --depend .\objects\major.d)
+F (.\Major.c)(0x5C07BF9B)(--c99 -c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\MDR32F8_StdPeriph_Driver\inc-D__UVISION_VERSION="524" -D_RTE_ -DUSE_MDR32F8-o .\objects\major.o --omf_browse .\objects\major.crf --depend .\objects\major.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588BC994)
 I (C:\Keil_v5\ARM\PACK\Keil\MDR32F8\0.1\Libraries\CMSIS\CM4\DeviceSupport\MDR32F8\inc\MDR1986VE8T.h)(0x5B204C12)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm4.h)(0x5B61B6D4)

@@ -10,4 +10,4 @@ void RTC_Init(); // real time clock init
 void RTC_LoadValue(uint32_t preload); // set real time clock main counter preload 
 
 
-uint32_t RTC_GetValue(); // get value of real time clock main counter
+uint32_t RTC_GetTime(); // get value of real time clock main counter

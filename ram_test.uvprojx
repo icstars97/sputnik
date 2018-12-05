@@ -410,6 +410,16 @@
               <FileType>5</FileType>
               <FilePath>.\mdr1986_rtc.h</FilePath>
             </File>
+            <File>
+              <FileName>mdr1645_failreport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mdr1645_failreport.c</FilePath>
+            </File>
+            <File>
+              <FileName>mdr1645_failreport.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\mdr1645_failreport.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

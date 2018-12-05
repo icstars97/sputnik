@@ -52,7 +52,7 @@ void RTC_LoadValue(uint32_t preload)
 }
 
 
-uint32_t RTC_GetValue(void)
+uint32_t RTC_GetTime(void)
 {
 	uint32_t retval;
 	retval=BKP->RTC_CNT_TMR0; //read from main counter register

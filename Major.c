@@ -12,7 +12,7 @@ void Triple_Write ( uint32_t Data_To_Write,  uint32_t *PlaceToWrite)
 uint32_t Triple_Read (uint32_t *PlaceToRead)
 {
 	uint8_t Amount_of_1=0;
-	uint32_t Read_Value;
+	uint32_t Read_Value=0;
 	for(uint8_t i=0; i<32; i++)
 	{
 		for(uint8_t j=0; j<3; j++)
